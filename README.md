@@ -1,28 +1,54 @@
-# SKELETON 
+# Blog API
 
-- Express
-- PostgretSQL
-- Sequelize ORM
-- Autenticacion con Tokens
-- Bcrypt para hashear contraseñas
-- Uso de Json Web Token
+- Front:
+    - Obtener todas las publicaciones
+    - Obtener una en especifico
+    - Obtener todas las categorias
+    - Obtener todos los Post de una categoria en especifico
+    - Obtener todos los posts que he creado
+    - Obtener los posts de un usuario en especifico
+    - Podemos paginar los posts
+    - Acciones de CRUD sobre Posts
+    - Crear categorias
+
+```json
+    {
+        "total": 68,
+        "prev": "localhost:9000/api/v1/posts?start=51&limit=60",
+        "next":"localhost:9000/api/v1/posts?start=61&limit=68",
+        "data":[
+            {
+                "id": 1,
+                "title": "ejemplo",
+                "content":"lorem ipsum",
+                "createdBy":{
+                    "id": 18,
+                    "name": "edson",
+                    "email": "edson@academlo.com"
+                },
+                "category":{
+                    "id": 4,
+                    "name": "tecnologia"
+
+                }
+            }
+        ]
+    }
+```
 
 
----
+/api/v1
 
+/users
+    - /me
+    - /me/posts
+    - /me/posts/:id
+    - /:id
 
-- Rutas de login y creacion de usuario (register)
-- Herramienta para publicar imagenes de perfil 
-- CRUD de usuarios con autenticacion y manejo de permisos
-- /users/:id DELETE, PUT
-- /users
+/categories
+    - /:id
+    - /:id/posts
 
-Orden 
-1. app.js
-2. .env
-3. config.js
-4. database.js
-5. modelos
-6. controladores
-7. servicios
-8. rutas
+/posts
+    - /:id
+
